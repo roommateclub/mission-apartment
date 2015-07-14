@@ -32,6 +32,7 @@
 	}
 
 	input[type="text"],
+  input[type="tel"],
 	input[type="password"],
 	input[type="email"],
 	select,
@@ -74,6 +75,7 @@
 	}
 
 	input[type="text"],
+  input[type="tel"],
 	input[type="password"],
 	input[type="email"],
 	select {
@@ -170,13 +172,14 @@
 		}
 
 		input[type="text"],
+    input[type="tel"],
 		input[type="password"],
 		input[type="email"],
 		select,
 		textarea {
 			background-color: _palette($p, border-bg);
 			border-color: _palette($p, border);
-			color: inherit;
+			color: black;
 
 			&:focus {
 				border-color: _palette($p, highlight);
@@ -239,6 +242,7 @@
 		form.alt {
 
 			input[type="text"],
+      input[type="tel"],
 			input[type="password"],
 			input[type="email"],
 			select,

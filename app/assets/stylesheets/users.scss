@@ -1,0 +1,13 @@
+.sign-up-form-wrapper{
+  padding: 1em;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  margin-bottom: 1em;
+  input{
+      color: black;
+    }
+  input[type="submit"], .btn {
+    color: white !important;
+    background-color: #63c1ae !important;
+  }
+}

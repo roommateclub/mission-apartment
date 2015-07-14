@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711120257) do
+ActiveRecord::Schema.define(version: 20150714105514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "missions", force: :cascade do |t|
+    t.integer  "client_id"
+    t.integer  "agent_id"
+    t.string   "address"
+    t.string   "landlord_phone"
+    t.string   "url"
+    t.text     "note"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "missions", ["agent_id"], name: "index_missions_on_agent_id", using: :btree
+  add_index "missions", ["client_id"], name: "index_missions_on_client_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "username"

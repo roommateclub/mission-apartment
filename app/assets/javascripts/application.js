@@ -17,4 +17,4 @@
 //= require skel.min
 //= require util
 //= require main
-
+//= require window-resizer

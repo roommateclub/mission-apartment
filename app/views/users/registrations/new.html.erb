@@ -11,7 +11,7 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.simple_fields_for(:profile, resource.build_profile) do |p| %>
+            <%= f.simple_fields_for(:profile, @profile) do |p| %>
               <%= p.input :username, label: "姓名", required: true %>
               <%= p.input :phone, label: "聯絡電話", required: true %>
             <% end %>

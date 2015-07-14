@@ -4,6 +4,7 @@ before_filter :configure_sign_up_params, only: [:create, :trial_registration]
 
   # GET /resource/sign_up
   def new
+    @profile = Profile.new
     super
   end
 
@@ -18,6 +19,7 @@ before_filter :configure_sign_up_params, only: [:create, :trial_registration]
       redirect_to root_path
     else
       resource = User.new(sign_up_params)
+      @profile = resource.build_profile(sign_up_params[:profile_attributes])
       render :new
     end
   end

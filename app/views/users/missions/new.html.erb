@@ -1,0 +1,22 @@
+<section id="mission-banner" class="content-wrapper banner">
+  <div class="banner-heading-wrapper">  
+    <h2>加入 Mission Apartment 試用計畫</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-push-3 banner-form-wrapper">
+        <%= simple_form_for(@mission, url: users_missions_path) do |f| %>
+          <label for="" require="true">
+            看屋地址<br />
+            (目前僅提供台北市)
+          </label>
+          <%= f.input :address, label: false %>
+          <%= f.input :landlord_phone, label: "房東聯絡電話" %>
+          <%= f.input :url, label: "相關網址" %>
+          <%= f.input :note, label: "注意事項" %>
+          <%= f.button :submit, "送出試用申請" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,2 @@
+module Users::MissionsHelper
+end

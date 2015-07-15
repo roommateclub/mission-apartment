@@ -17,7 +17,13 @@
       background-image: image-url('cover7.jpg');
     }
     &#registration-banner{
-     background-image: image-url('cover.jpg'); 
+     background-image: image-url('cover.jpg');
+    }
+    &#mission-banner{
+     background-image: image-url('cover2.jpg');
+    }
+    &#successfully-registered-banner{
+      background-image: image-url('cover4.jpg');
     }
     .banner-heading-wrapper{
       position: relative;
@@ -92,3 +98,17 @@
 			}
 		}
 	}
+  .banner-form-wrapper{
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    margin-bottom: 1em;
+    input{
+        background-color: white;
+        color: black;
+      }
+    input[type="submit"], .btn {
+      color: white !important;
+      background-color: #63c1ae !important;
+    }
+  }

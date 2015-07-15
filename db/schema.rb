@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150714105514) do
+ActiveRecord::Schema.define(version: 20150715055646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,12 +23,14 @@ ActiveRecord::Schema.define(version: 20150714105514) do
     t.string   "landlord_phone"
     t.string   "url"
     t.text     "note"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "status",         default: 0
   end
 
   add_index "missions", ["agent_id"], name: "index_missions_on_agent_id", using: :btree
   add_index "missions", ["client_id"], name: "index_missions_on_client_id", using: :btree
+  add_index "missions", ["status"], name: "index_missions_on_status", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "username"

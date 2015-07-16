@@ -1,31 +1,30 @@
 <section id="registration-banner" class="content-wrapper banner">
   <div class="banner-heading-wrapper">  
     <h2>加入 Mission Apartment 試用計畫</h2>
-    <p></p>
-  </div>
-  <div class="container">
-    <div class="row">
+    <div class="container">
+      <div class="row">
 
-      <div class="col-sm-6 col-sm-push-3 banner-form-wrapper">
-        <%= simple_form_for(resource, as: resource_name, url: trial_registration_path) do |f| %>
-          <%= f.error_notification %>
+        <div class="col-md-6 col-sm-12 col-xs-12 col-md-push-3 banner-form-wrapper">
+          <%= simple_form_for(resource, as: resource_name, url: trial_registration_path) do |f| %>
+            <%= f.error_notification %>
 
-          <div class="form-inputs">
-            <%= f.simple_fields_for(:profile, @profile) do |p| %>
-              <%= p.input :username, label: "姓名", required: true %>
-              <%= p.input :phone, label: "聯絡電話", required: true %>
-            <% end %>
-            <label for="user_email" require="true">
-              Gmail<br />
-              (試營運期間使用 Google Hangouts 為您直播)
-            </label>
-            <%= f.input :email, label: false, required: true, autofocus: true %>
-          </div>
+            <div class="form-inputs">
+              <%= f.simple_fields_for(:profile, @profile) do |p| %>
+                <%= p.input :username, label: "姓名", required: true %>
+                <%= p.input :phone, label: "聯絡電話", required: true %>
+              <% end %>
+              <label for="user_email" require="true">
+                Gmail<br />
+                (試營運期間使用 Google Hangouts 為您直播)
+              </label>
+              <%= f.input :email, label: false, required: true, autofocus: true %>
+            </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "申請免費試用"%>
-          </div>
-        <% end %>
+            <div class="form-actions">
+              <%= f.button :submit, "申請免費試用"%>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

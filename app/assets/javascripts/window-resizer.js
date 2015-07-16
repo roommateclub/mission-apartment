@@ -1,6 +1,7 @@
 $(document).on("page:change", function(){
-  console.log("woo");
-  $('.content-wrapper').css("min-height", $(document).height() - $('.navbar').outerHeight() - $('#footerwrap').outerHeight());
+  console.log($(window).height());
+  $('.full-section').css("min-height", $(window).height());
+  $('.content-wrapper').css("min-height", $(document).height() - $('.navbar').outerHeight() - $('.footer').outerHeight());
   $(window).resize(function(){
       $(".content-wrapper").css("min-height", $(window).height() - $('.navbar').outerHeight() - $('.footer').outerHeight());
   })

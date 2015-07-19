@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 # Form
 gem 'simple_form'
 
+# Google Analytics
+gem 'rack-tracker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

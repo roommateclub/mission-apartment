@@ -30,21 +30,17 @@ gem 'rack-tracker'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# Development tools
+gem 'pry'
+gem 'pry-remote'
+
 group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'capistrano-rvm'
   gem 'capistrano-rails'
   gem 'cape'
   gem 'capistrano-passenger'
   gem 'capistrano3-nginx'
-end
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'annotate'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 end
 

@@ -18,5 +18,7 @@ class Mission < ActiveRecord::Base
   belongs_to :client, class_name: 'User'
   belongs_to :agent, class_name: 'User'
 
+  validates_presence_of :address, :landlord_phone
+
   enum status: [:uncheck, :contacted, :finished, :aborted]
 end

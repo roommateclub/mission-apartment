@@ -10,9 +10,16 @@
 		@include color-typography($banner_palette);
 		@include color-button($banner_palette);
 		background-attachment: fixed;
+    background-size: cover;
     background-position: top;
-		background-size: cover;
 		text-align: center;
+    // for mobile devices
+    @media only screen 
+    and (min-device-width : 320px) 
+    and (max-device-width : 736px) {
+      background-attachment: local;
+    }
+
     &#landing-banner{
       background-image: image-url('cover7.jpg');
     }

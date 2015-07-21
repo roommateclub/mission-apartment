@@ -14,6 +14,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'font-awesome-sass'
+gem 'nprogress-rails'
 
 # User authentication
 gem 'devise'

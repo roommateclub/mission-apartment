@@ -28,3 +28,4 @@ pickle-email-*.html
 .DS_Store
 *.sublime-workspace
 *.sublime-project
+id_rsa

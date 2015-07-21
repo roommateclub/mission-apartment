@@ -5,14 +5,15 @@
       <div class="row">
         <div class="col-md-6 col-sm-12 col-xs-12 col-md-push-3 banner-form-wrapper">
           <%= simple_form_for(@mission, url: users_missions_path) do |f| %>
-            <label for="" require="true">
-              看屋地址<br />
-              (目前僅提供台北市)
-            </label>
+            <%= f.label :address, class: "required" do %>
+            <abbr title="required">*</abbr>
+            看屋地址<br />
+            (目前僅提供台北市服務，請見諒)
+            <% end %>
             <%= f.input :address, label: false %>
             <%= f.input :landlord_phone, label: "房東聯絡電話" %>
-            <%= f.input :url, label: "相關網址(591 租屋網等)" %>
-            <%= f.input :note, label: "注意事項" %>
+            <%= f.input :url, label: "相關網址(591 租屋網、好房網等)" %>
+            <%= f.input :note, label: "希望的看房重點" %>
             <%= f.button :submit, "送出試用申請" %>
           <% end %>
         </div>

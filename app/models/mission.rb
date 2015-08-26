@@ -15,8 +15,8 @@
 #
 
 class Mission < ActiveRecord::Base
-  belongs_to :client, class_name: 'User'
-  belongs_to :agent, class_name: 'User'
+  belongs_to :user, foreign_key: :client_id, inverse_of: :missions
+  # belongs_to :agent, class_name: 'User', inverse_of: :missions
 
   validates_presence_of :address, :landlord_phone
 

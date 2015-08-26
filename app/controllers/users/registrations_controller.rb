@@ -5,6 +5,7 @@ before_filter :configure_sign_up_params, only: [:create, :trial_registration]
   # GET /resource/sign_up
   def new
     @profile = Profile.new
+    @mission = Mission.new
     super
   end
 
@@ -17,10 +18,11 @@ before_filter :configure_sign_up_params, only: [:create, :trial_registration]
     @user = User.new(sign_up_params)
     if @user.set_default_password
       sign_in @user
-      redirect_to new_users_mission_path
+      redirect_to successfully_registered_path
     else
       resource = User.new(sign_up_params)
-      @profile = resource.build_profile(sign_up_params[:profile_attributes])
+      # @profile = resource.profile(sign_up_params[:profile_attributes])
+      # @mission = resource.missions(sign_up_params[:missions_attributes]["0"])
       render :new
     end
   end
@@ -53,7 +55,8 @@ before_filter :configure_sign_up_params, only: [:create, :trial_registration]
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:email, profile_attributes: [:phone, :username])}
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:email, profile_attributes: [:phone, :username], 
+      missions_attributes: [:address, :landlord_phone, :url, :note])}
   end
 
   # If you have extra params to permit, append them to the sanitizer.

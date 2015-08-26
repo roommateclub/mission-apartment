@@ -11,5 +11,6 @@
 #
 
 class Profile < ActiveRecord::Base
+  validates_presence_of :username, :phone
   validates_uniqueness_of :phone
 end

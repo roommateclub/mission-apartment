@@ -24,13 +24,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :profile
+  has_one :profile, validate: true
 
-  has_many :missions, foreign_key: "client_id"
-  has_many :missions, foreign_key: "agent_id"
+  has_many :missions, foreign_key: "client_id", inverse_of: :user
+  # has_many :missions, foreign_key: "agent_id"
 
 
   accepts_nested_attributes_for :profile, allow_destroy: true
+  accepts_nested_attributes_for :missions
+  # validates_associated :missions
 
   def set_default_password
     random_default_password = Devise.friendly_token.first(6)

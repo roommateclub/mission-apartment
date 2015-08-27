@@ -34,10 +34,11 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :missions
   # validates_associated :missions
 
-  def set_default_password
+  def set_default_password_and_token
     random_default_password = Devise.friendly_token.first(6)
     self.password = random_default_password
     self.default_password = random_default_password
+    self.token = Devise.friendly_token.first(16)
     true if save
   end
 end

@@ -4,9 +4,8 @@ class Users::MissionsController < Users::BaseController
   end
 
   def create
-    @mission = Mission.new(mission_params)
+    @mission = current_user.missions.build(mission_params)
     if @mission.save
-      @mission.update(client: current_user)
       sign_out current_user
       redirect_to successfully_registered_path
     else

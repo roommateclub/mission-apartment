@@ -18,19 +18,7 @@
                 (試營運期間使用 Google Hangouts 為您直播)
               </label>
               <%= f.input :email, label: false, required: true, autofocus: true %>
-              <%= f.simple_fields_for(:missions, @mission) do |m| %>
-                <%= m.label :address, class: "required" do %>
-                <abbr title="required">*</abbr>
-                看屋地址<br />
-                (目前僅提供台北市服務，請見諒)
-                <% end %>
-                <%= m.input :address, label: false %>
-                <%= m.input :landlord_phone, label: "房東聯絡電話" %>
-                <%= m.input :url, label: "相關網址(591 租屋網、好房網等)" %>
-                <%= m.input :note, label: "希望的看房重點" %>
-              <% end %>
             </div>
-
             <div class="form-actions">
               <%= f.button :submit, "申請免費試用"%>
             </div>

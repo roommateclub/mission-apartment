@@ -1,1 +1,17 @@
-<h1>test</h1>
+<h1><%= @username %> 您好:</h1>
+
+<p>我是 Mission-Apartment 視訊直撥看屋服務的發起人 Jeffrey，首先謝謝您願意一起參與 Mission-Apartment，這個我們覺得很酷的計畫。</p>
+
+<p>Mission-Apartment 是一個視訊看屋服務；我們希望藉由手機視訊直撥，讓有租屋需求的朋友不必再為了租房子前的「看屋」花上大量的時間、體力和金錢。</p>
+<p>透過 Mission-Apartment，您將可以先行過濾掉實況與照片相差太多的房屋，不僅將大幅減少親自登門看屋的數量和時間，也將使看屋行程更加容易安排，</p>
+
+<p>目前我們正在試營運階段，為求服務品質，我們先運用發展時間較長、連線較為穩定的 Google Hangouts 作為直播工具。</p>
+
+<p>若您有看屋需求，請點擊下方連結填寫想看的房屋的相關資料，我們會盡快和您聯絡並安排直播時間。</p>
+
+<%= link_to("填寫直播房屋資料", new_users_mission_url(token: @token)) %>
+
+<p>再次感謝您申請試用 Mission-Apartment，若有任何問題與建議，歡迎至我們的 <a href="http://on.fb.me/1JnLM2h">facebook 社團</a>留言。</p>
+
+<p>Jeffrey 敬上</p>
+

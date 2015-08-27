@@ -14,7 +14,23 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  # emergency mailgun doesnt send mail
+  config.action_mailer.smtp_settings = {
+    :port           => 587,
+    :address        => Rails.application.secrets.mailgun_smtp_server, 
+    :user_name      => Rails.application.secrets.mailgun_username,
+    :password       => Rails.application.secrets.mailgun_password,
+    :domain         => Rails.application.secrets.mailgun_api_base_url,
+    :authentication => :plain
+  }
+  config.action_mailer.default_url_options = {
+    :host => Rails.application.secrets.domain.sub("http://", "")
+  }
+  config.action_controller.default_url_options = {
+    :host => Rails.application.secrets.domain.sub("http://", "")
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

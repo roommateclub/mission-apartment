@@ -17,7 +17,7 @@ before_filter :configure_sign_up_params, only: [:create, :trial_registration]
   def trial_registration
     @user = User.new(sign_up_params)
     if @user.set_default_password
-      sign_in @user
+      SystemMailer.welcome.delever
       redirect_to successfully_registered_path
     else
       resource = User.new(sign_up_params)

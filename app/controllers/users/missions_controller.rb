@@ -1,6 +1,10 @@
 class Users::MissionsController < Users::BaseController
   def new
-    @mission = Mission.new
+    if current_user.missions.present?
+      redirect_to already_registered_path
+    else
+      @mission = Mission.new
+    end
   end
 
   def create

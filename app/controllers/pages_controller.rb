@@ -5,4 +5,8 @@ class PagesController < ApplicationController
   def successfully_registered
     
   end
+
+  def already_registered
+    
+  end
 end

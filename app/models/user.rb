@@ -32,7 +32,6 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :profile, allow_destroy: true
   accepts_nested_attributes_for :missions
-  # validates_associated :missions
 
   def set_default_password_and_token
     random_default_password = Devise.friendly_token.first(6)

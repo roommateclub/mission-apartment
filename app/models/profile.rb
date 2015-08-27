@@ -11,6 +11,7 @@
 #
 
 class Profile < ActiveRecord::Base
+  belongs_to :user, dependent: :destroy
   validates_presence_of :username, :phone
   validates_uniqueness_of :phone
 end

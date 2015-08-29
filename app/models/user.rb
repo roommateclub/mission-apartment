@@ -16,6 +16,7 @@
 #  last_sign_in_ip        :inet
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  token                  :string(16)
 #
 
 class User < ActiveRecord::Base
@@ -32,6 +33,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :profile, allow_destroy: true
   accepts_nested_attributes_for :missions
+
+  delegate :username, to: :profile
 
   def set_default_password_and_token
     random_default_password = Devise.friendly_token.first(6)

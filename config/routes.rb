@@ -11,6 +11,15 @@ Rails.application.routes.draw do
   namespace :users, path: "" do
     resources :missions
   end
+
+  devise_for :admin, controllers: {
+    registrations: "admin/registrations",
+    sessions: "admin/sessions"
+  }
+
+  namespace :admin do
+    get :dashboard, to: "base#dashboard"
+  end
   get '/successfully-registered', to: 'pages#successfully_registered'
   get '/already-registered', to: 'pages#already_registered'
   root 'pages#landing'

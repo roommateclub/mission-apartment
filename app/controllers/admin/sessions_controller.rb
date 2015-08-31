@@ -1,5 +1,7 @@
 class Admin::SessionsController < Devise::SessionsController
+  layout "admin"
 # before_filter :configure_sign_in_params, only: [:create]
+
 
   # GET /resource/sign_in
   # def new
@@ -18,7 +20,7 @@ class Admin::SessionsController < Devise::SessionsController
 
   # protected
 
-  def after_sign_out_path_for(resource)
+  def after_sign_in_path_for(resource)
     admin_dashboard_path
   end
 

@@ -3,7 +3,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th>id</th>
+          <th>登記時間</th>
           <th>姓名</th>
           <th>email</th>
           <th>地址</th>
@@ -16,7 +16,7 @@
       <tbody>
       <% @missions.each do |mission| %>
         <tr>
-          <td><%= mission.id %></td>
+          <td><%= mission.created_at.to_date %></td>
           <td><%= mission.user.username rescue nil %></td>
           <td><%= mission.user.email rescue nil %></td>
           <td><%= mission.address %></td>

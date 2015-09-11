@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get :dashboard, to: "base#dashboard"
+    get "dashboard/missions", to: "base#missions"
   end
   get '/successfully-registered', to: 'pages#successfully_registered'
   get '/already-registered', to: 'pages#already_registered'

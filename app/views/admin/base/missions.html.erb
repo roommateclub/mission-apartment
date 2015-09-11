@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>姓名</th>
+          <th>email</th>
+          <th>地址</th>
+          <th>網址</th>
+          <th>房東電話</th>
+          <th>注意事項</th>
+
+        </tr>
+      </thead>
+      <tbody>
+      <% @missions.each do |mission| %>
+        <tr>
+          <td><%= mission.id %></td>
+          <td><%= mission.user.username rescue nil %></td>
+          <td><%= mission.user.email rescue nil %></td>
+          <td><%= mission.address %></td>
+          <td><%= link_to(mission.url) %></td>
+          <td><%= mission.landlord_phone %></td>
+          <td><%= mission.note %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    
+  </div>
+</div>

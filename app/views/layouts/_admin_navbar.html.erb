@@ -7,6 +7,7 @@
       <% end %>
     </h1>
   <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to("任務列表", admin_dashboard_missions_path) %></li>
     <li><%= link_to("登出", destroy_admin_session_path, method: :delete) %></li>
   </ul>
   <!-- <a href="#nav">Menu</a> -->

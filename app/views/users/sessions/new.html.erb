@@ -1,15 +1,22 @@
-<h2>Log in</h2>
+<section id="registration-banner" class="content-wrapper banner">
+  <div class="banner-heading-wrapper">  
+    <h2>加入 Mission Apartment 試用計畫</h2>
+    <div class="container">
+      <div class="row">
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+        <div class="col-md-6 col-sm-12 col-xs-12 col-md-push-3 banner-form-wrapper">
+          <%= simple_form_for(resource, as: resource_name, url: trial_registration_path) do |f| %>
+            <%= f.error_notification %>
+
+            <div class="form-inputs">
+              <%= f.input :email, label: false, required: true, autofocus: true, label: "Email" %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "申請免費試用"%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</section>
